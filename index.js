@@ -1,14 +1,6 @@
-let homeScoreEl = document.getElementById("home-team-score");
-let guestScoreEl = document.getElementById("guest-team-score");
-let homeScore = 0;
-let guestScore = 0;
+let scores = { home: 0, guest: 0 };
 
-function addHomeScore(points) {
-    homeScore += points;
-    homeScoreEl.textContent = homeScore;
-}
-
-function addGuestScore(points) {
-    guestScore += points;
-    guestScoreEl.textContent = guestScore;
+function addScore(team, points) {
+    scores[team] += points;
+    document.getElementById(team + "-team-score").textContent = scores[team];
 }
